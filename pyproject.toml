@@ -10,3 +10,9 @@ dependencies = []
 name = "ustc"
 url = "https://mirrors.ustc.edu.cn/pypi/simple"
 default = true
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.29.5",
+    "pytest>=8.3.4",
+]
