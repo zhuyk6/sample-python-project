@@ -22,6 +22,10 @@ pythonpath = "src"
 addopts = [
     "--import-mode=importlib",
 ]
+testpaths = [
+    "src",
+    "tests",
+]
 
 [tool.mypy]
 ignore_missing_imports = true
