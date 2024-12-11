@@ -44,3 +44,10 @@ def test_fib_exception():
 
     with pytest.raises(ValueError):
         fib(-1)
+
+
+def test_github_actions_ruff_lint():
+
+
+def test_github_actions_ruff_format():
+    fib(  1  )
