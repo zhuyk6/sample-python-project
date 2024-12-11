@@ -51,4 +51,4 @@ def test_github_actions_ruff_lint():
 
 
 def test_github_actions_ruff_format():
-    fib( 1 )
+    fib(1)
