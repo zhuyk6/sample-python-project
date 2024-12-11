@@ -25,3 +25,12 @@ addopts = [
 
 [tool.mypy]
 ignore_missing_imports = true
+
+[tool.ruff]
+indent-width = 4
+line-length = 120
+
+[tool.ruff.format]
+docstring-code-format = true
+docstring-code-line-length = "dynamic"
+indent-style = "space"
