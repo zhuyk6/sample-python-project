@@ -5,6 +5,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: astral-sh/ruff-action@v2
-      - run: ruff check
-      - run: ruff format
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Install ruff and ruff check
+        uses: astral-sh/ruff-action@v2
+
+      - name: Format code
+        run: ruff format
+      
+      - name: Commit changes
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+          git add .
+          git commit -m '🌈 style: format code with ruff' || echo "No changes to commit"
+      
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
