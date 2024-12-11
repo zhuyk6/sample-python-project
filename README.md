@@ -1,10 +1,18 @@
 # Sample-Python-Project
 
+## Package and project manager
+
+Using [`uv`](https://docs.astral.sh/uv/) to manage the project.
+
 ## Test
 
 Using [`pytest`](https://docs.pytest.org/en/stable/index.html).
 
 [Reference](https://docs.pytest.org/en/stable/explanation/goodpractices.html).
+
+## Format
+
+Using [`ruff`](https://docs.astral.sh/ruff/formatter/) to format code style.
 
 
 ## Notes
