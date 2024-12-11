@@ -47,7 +47,8 @@ def test_fib_exception():
 
 
 def test_github_actions_ruff_lint():
+    a
 
 
 def test_github_actions_ruff_format():
-    fib(  1  )
+    fib(1)
