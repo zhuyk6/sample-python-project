@@ -1,18 +1,30 @@
 # Sample-Python-Project
 
-## Package and project manager
+## Usage
 
-Using [`uv`](https://docs.astral.sh/uv/) to manage the project.
+- Just use `uv run`:
 
-## Test
+    This will create a virtual python environment (or `uv sync` explicitly)
 
-Using [`pytest`](https://docs.pytest.org/en/stable/index.html).
+- You can also activate the virtual environment.
+  1. Install all dependencies: `uv sync`
+  2. Load the virtual environment (under `.venv`):
 
-[Reference](https://docs.pytest.org/en/stable/explanation/goodpractices.html).
+      Under `.venv\bin` there are several scripts to activate venv. 
+      - Fish shell: `source .venv/bin/activate.fish`
+      - PowerShell: `.\.venv\bin\activate.ps1`
+      - CMD: `.\.venv\bin\activate.bat`
 
-## Format
+  3. Use whatever you want: `python` or `pytest`.
 
-Using [`ruff`](https://docs.astral.sh/ruff/formatter/) to format code style.
+
+## Tools
+
+- Package and project manager: [`uv`](https://docs.astral.sh/uv/)
+
+- Test: [`pytest`](https://docs.pytest.org/en/stable/index.html), here is a [reference](https://docs.pytest.org/en/stable/explanation/goodpractices.html).
+
+- Format: [`ruff`](https://docs.astral.sh/ruff/formatter/) 
 
 
 ## Notes
@@ -36,3 +48,10 @@ After setting `PYTHONPATH=$pwd/src`, you can run the scripts out of `src/` folde
 - For Windows, 
     - CMD: `set PYTHONPATH=%CD%\src`
     - PowerShell: `$env:PYTHONPATH = $PWD.Path + "\src"`
+
+I have added this environment variable into `.env` file. `uv run` support load environment variables from dotenv files.
+You can just run `uv run --env-file .env tests/test_fib.py`.
+
+> In fact in this project, there is no need to run python file in `tests/` folder seperately.
+> 
+> You just need `pytest` to run tests under `tests/` folder, since I have added configurations for `pytest` in `pyproject.toml`.
