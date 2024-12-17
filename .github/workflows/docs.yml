@@ -38,7 +38,7 @@ jobs:
         run: uv sync --all-extras --dev --default-index https://pypi.org/simple
       
       - name: Build documentation
-        run: uv run pdoc --math --docformat google mypkg -o docs/
+        run: uv run pdoc --math --docformat google src -o docs/
 
       - uses: actions/upload-pages-artifact@v3
         with:
