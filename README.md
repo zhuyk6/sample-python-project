@@ -26,6 +26,7 @@
 
 - Format: [`ruff`](https://docs.astral.sh/ruff/formatter/) 
 
+- Document: [`pdoc`](https://pdoc.dev/)
 
 ## Notes
 
