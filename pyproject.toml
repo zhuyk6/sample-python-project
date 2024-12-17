@@ -10,7 +10,12 @@ authors = [{ name = "Yikang Zhu", email = "zhuyk6@foxmail.com" }]
 dependencies = []
 
 [dependency-groups]
-dev = ["ipykernel>=6.29.5", "pdoc>=15.0.1", "pytest>=8.3.4"]
+dev = [
+    "ipykernel>=6.29.5",
+    "pdoc>=15.0.1",
+    "pytest-cov>=6.0.0",
+    "pytest>=8.3.4",
+]
 
 [[tool.uv.index]]
 name = "ustc"
@@ -22,8 +27,13 @@ index-url = "https://mirrors.ustc.edu.cn/pypi/simple"
 
 [tool.pytest.ini_options]
 pythonpath = "src"
-addopts = ["--import-mode=importlib"]
-testpaths = ["src", "tests"]
+addopts = [
+    "--import-mode=importlib",
+    "--cov=src",
+    "--cov-report=term-missing",
+    "--cov-report=html:cov_html",
+]
+testpaths = ["tests"]
 
 [tool.mypy]
 ignore_missing_imports = true
