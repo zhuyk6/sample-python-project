@@ -5,6 +5,7 @@
 ![GitHub Actions Workflow (docs) Status](https://img.shields.io/github/actions/workflow/status/zhuyk6/sample-python-project/.github%2Fworkflows%2Fdocs.yml?logo=github&label=docs)
 ![GitHub License](https://img.shields.io/github/license/zhuyk6/sample-python-project)
 ![Code Coverage](./assets/coverage-badge.svg)
+[![Docs](https://img.shields.io/badge/docs-blue)](https://zhuyk6.github.io/sample-python-project/)
 
 ## Usage
 
