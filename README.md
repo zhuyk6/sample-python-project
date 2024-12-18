@@ -1,5 +1,11 @@
 # Sample-Python-Project
 
+![GitHub Actions Workflow (test) Status](https://img.shields.io/github/actions/workflow/status/zhuyk6/sample-python-project/.github%2Fworkflows%2Ftest.yml?logo=github&label=test)
+![GitHub Actions Workflow (ruff) Status](https://img.shields.io/github/actions/workflow/status/zhuyk6/sample-python-project/.github%2Fworkflows%2Fruff.yml?logo=github&label=lint%20and%20format)
+![GitHub Actions Workflow (docs) Status](https://img.shields.io/github/actions/workflow/status/zhuyk6/sample-python-project/.github%2Fworkflows%2Fdocs.yml?logo=github&label=docs)
+![GitHub License](https://img.shields.io/github/license/zhuyk6/sample-python-project)
+![Code Coverage](./assets/coverage-badge.svg)
+
 ## Usage
 
 - Just use `uv run`:

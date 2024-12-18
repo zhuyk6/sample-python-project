@@ -24,3 +24,21 @@ jobs:
       
       - name: Run tests
         run: uv run pytest
+      
+      - name: Generate coverage badge
+        run: |
+          uv tool install genbadge[coverage]
+          uv run genbadge coverage -i cov.xml -o assets/coverage-badge.svg
+      
+      - name: Commit coverage badge
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add assets/coverage-badge.svg
+          git commit -m "📊 coverage: update coverage badge" || echo "No changes to commit"
+      
+      - name: Push coverage badge
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
