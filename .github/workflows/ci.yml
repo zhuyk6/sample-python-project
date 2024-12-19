@@ -15,7 +15,7 @@ jobs:
           fetch-depth: 0
 
       - name: Install ruff and ruff check
-        uses: astral-sh/ruff-action@v2
+        uses: astral-sh/ruff-action@f2e32211077f40bfeab40e16285216924ebea4cb
 
       - name: Format code
         run: ruff format
@@ -28,7 +28,7 @@ jobs:
           git commit -m '🌈 style: format code with ruff' || echo "No changes to commit"
       
       - name: Push changes
-        uses: ad-m/github-push-action@master
+        uses: ad-m/github-push-action@77c5b412c50b723d2a4fbc6d71fb5723bcd439aa
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
@@ -44,7 +44,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Install uv
-        uses: astral-sh/setup-uv@v4
+        uses: astral-sh/setup-uv@38f3f104447c67c051c4a08e39b64a148898af3a
         with:
           enable-cache: true
           cache-dependency-glob: "uv.lock"
@@ -76,7 +76,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Install uv
-        uses: astral-sh/setup-uv@v4
+        uses: astral-sh/setup-uv@38f3f104447c67c051c4a08e39b64a148898af3a
         with:
           enable-cache: true
           cache-dependency-glob: "uv.lock"
@@ -101,7 +101,7 @@ jobs:
           git commit -m "📊 coverage: update coverage badge" || echo "No changes to commit"
       
       - name: Push coverage badge
-        uses: ad-m/github-push-action@master
+        uses: ad-m/github-push-action@77c5b412c50b723d2a4fbc6d71fb5723bcd439aa
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
@@ -115,7 +115,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Install uv
-        uses: astral-sh/setup-uv@v4
+        uses: astral-sh/setup-uv@38f3f104447c67c051c4a08e39b64a148898af3a
         with:
           enable-cache: true
           cache-dependency-glob: "uv.lock"
