@@ -1,5 +1,6 @@
-from mypkg.fib import fib, fib_iter
 import pytest
+
+from mypkg.fib import fib, fib_iter
 
 
 def test_fib():
