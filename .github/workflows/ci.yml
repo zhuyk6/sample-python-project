@@ -18,7 +18,9 @@ jobs:
         uses: astral-sh/ruff-action@f2e32211077f40bfeab40e16285216924ebea4cb
 
       - name: Format code
-        run: ruff format
+        run: |
+          ruff check . --select I --fix
+          ruff format
       
       - name: Commit changes
         run: |
@@ -55,7 +57,7 @@ jobs:
           python-version-file: ".python-version"
       
       - name: Install dependencies
-        run: uv sync --all-extras --dev --default-index https://pypi.org/simple
+        run: uv sync --all-extras --dev --index pypi=https://pypi.org/simple
       
       - name: Run tests
         run: uv run pytest
@@ -95,6 +97,7 @@ jobs:
       
       - name: Commit coverage badge
         run: |
+          git pull origin ${{ github.ref }}
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
           git add assets/coverage-badge.svg
@@ -107,6 +110,7 @@ jobs:
           branch: ${{ github.ref }}
 
   docs:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     needs: pytest
     permissions:
@@ -126,16 +130,17 @@ jobs:
           python-version-file: ".python-version"
       
       - name: Install dependencies
-        run: uv sync --all-extras --dev --default-index https://pypi.org/simple
+        run: uv sync --all-extras --dev --index pypi=https://pypi.org/simple
       
       - name: Build documentation
-        run: uv run pdoc --math --docformat google src -o docs/
+        run: uv run pdoc --math --mermaid --docformat google src -o docs/
 
       - uses: actions/upload-pages-artifact@v3
         with:
           path: docs/
 
   deploy:
+    if: github.ref == 'refs/heads/main'
     needs: docs
     runs-on: ubuntu-latest
     permissions:
