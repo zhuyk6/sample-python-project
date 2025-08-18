@@ -15,7 +15,7 @@ jobs:
           fetch-depth: 0
 
       - name: Install ruff and ruff check
-        uses: astral-sh/ruff-action@9828f49eb4cadf267b40eaa330295c412c68c1f9
+        uses: astral-sh/ruff-action@57714a7c8a2e59f32539362ba31877a1957dded1
 
       - name: Format code
         run: |
