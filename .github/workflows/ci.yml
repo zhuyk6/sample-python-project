@@ -135,7 +135,7 @@ jobs:
       - name: Build documentation
         run: uv run pdoc --math --mermaid --docformat google src -o docs/
 
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v4
         with:
           path: docs/
 
