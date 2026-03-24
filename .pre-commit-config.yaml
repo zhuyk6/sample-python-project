@@ -1,0 +1,17 @@
+# Keep it minimal: auto-format Python code before commit.
+# Uses local hooks that call `uv run ...` so we don't depend on third-party hook repos.
+
+repos:
+  - repo: local
+    hooks:
+      - id: ruff-imports
+        name: ruff (fix imports)
+        entry: uv run ruff check --select I --fix
+        language: system
+        types_or: [python]
+
+      - id: ruff-format
+        name: ruff format
+        entry: uv run ruff format
+        language: system
+        types_or: [python]
