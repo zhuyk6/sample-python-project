@@ -3,7 +3,6 @@
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/zhuyk6/sample-python-project/.github%2Fworkflows%2Fci.yml?logo=github&label=ci)
 ![GitHub License](https://img.shields.io/github/license/zhuyk6/sample-python-project)
 ![Code Coverage](./assets/coverage-badge.svg)
-[![Docs](https://img.shields.io/badge/docs-blue)](https://zhuyk6.github.io/sample-python-project/)
 
 ## Usage
 
@@ -30,8 +29,6 @@
 - Test: [`pytest`](https://docs.pytest.org/en/stable/index.html), here is a [reference](https://docs.pytest.org/en/stable/explanation/goodpractices.html).
 
 - Format: [`ruff`](https://docs.astral.sh/ruff/formatter/) 
-
-- Document: [`pdoc`](https://pdoc.dev/)
 
 ## Notes
 
