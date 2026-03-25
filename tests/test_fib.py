@@ -13,6 +13,19 @@ def test_fib():
     assert fib_iter(5) == 8
 
 
+@pytest.mark.parametrize(
+    "n, expected",
+    [
+        (0, 1),
+        (1, 1),
+        (5, 8),
+    ],
+)
+def test_fib_parametrize(n, expected):
+    assert fib(n) == expected
+    assert fib_iter(n) == expected
+
+
 def test_fib_exception():
     with pytest.raises(ValueError):
         fib(-1)
