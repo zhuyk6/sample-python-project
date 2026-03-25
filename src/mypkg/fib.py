@@ -1,18 +1,15 @@
+"""
+This module provides functions to calculate Fibonacci numbers.
+"""
+
+
 def fib(n: int) -> int:
-    r"""
-    Calculate the nth Fibonacci number.
+    """Calculate the nth Fibonacci number using the recursive approach.
 
-    The Fibonacci sequence is a series of numbers where each number is the sum of the two preceding ones,
-    usually starting with 1 and 1. This function uses a recursive approach to calculate the nth number
-    in the sequence.
-
-    The $fib(n)$ definition here used is:
-    .. math::
-        fib(n) = \begin{cases}
-            1, & n = 0 \\\\
-            1, & n = 1\\\\
-            fib(n-1) + fib(n-2), &  n > 1
-        \end{cases}
+    The Fibonacci sequence is defined as follows:
+    - F(0) = 1
+    - F(1) = 1
+    - F(n) = F(n-1) + F(n-2) for n > 1
 
     Args:
         n (int): The position in the Fibonacci sequence to calculate. Must be a non-negative integer.
