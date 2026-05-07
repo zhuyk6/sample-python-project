@@ -11,10 +11,10 @@ dependencies = []
 
 [dependency-groups]
 dev = [
-    "ipykernel>=6.29.5",
-    "pre-commit>=4.0.0",
-    "pytest-cov>=6.0.0",
-    "pytest>=8.3.4",
+  "ipykernel>=6.29.5",
+  "pre-commit>=4.0.0",
+  "pytest-cov>=6.0.0",
+  "pytest>=8.3.4",
 ]
 
 [build-system]
@@ -33,12 +33,14 @@ default = true
 [tool.uv.pip]
 index-url = "https://mirrors.ustc.edu.cn/pypi/simple"
 
-[tool.pytest.ini_options]
-pythonpath = "src"
+[tool.pytest]
+minversion = "9.0"
+strict = true
+pythonpath = ["src"]
+testpaths = ["tests"]
 addopts = [
     "--import-mode=importlib",
 ]
-testpaths = ["tests"]
 
 [tool.coverage.run]
 branch = true
